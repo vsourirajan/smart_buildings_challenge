@@ -126,7 +126,7 @@ def visualize_temperature_devices():
             plt.plot(days, temperature_values, label=device_name, linewidth=1.5)
     
     plt.xlabel('Days (June 2022)')
-    plt.ylabel('Temperature (Kelvin)')
+    plt.ylabel('Temperature Sensor Value')
     plt.title('Temperature of 3 Selected Devices Throughout Training Period (June 2022)')
     plt.legend()
     plt.grid(True, alpha=0.3)
@@ -138,10 +138,10 @@ def visualize_temperature_devices():
             device_idx = temp_data_ids[device_id]
             temp_values = train_temp[:, device_idx]
             print(f"\n{device_name}:")
-            print(f"  Mean Temperature: {np.mean(temp_values):.2f} K")
-            print(f"  Min Temperature: {np.min(temp_values):.2f} K")
-            print(f"  Max Temperature: {np.max(temp_values):.2f} K")
-            print(f"  Std Deviation: {np.std(temp_values):.2f} K")
+            print(f"  Mean Temperature: {np.mean(temp_values):.2f}")
+            print(f"  Min Temperature: {np.min(temp_values):.2f}")
+            print(f"  Max Temperature: {np.max(temp_values):.2f}")
+            print(f"  Std Deviation: {np.std(temp_values):.2f}")
     
     plt.tight_layout()
     plt.savefig('temperature_visualization.png', dpi=300, bbox_inches='tight')
@@ -157,7 +157,7 @@ def visualize_temperature_devices():
             
             plt.hist(temp_values, bins=50, alpha=0.7, label=device_name, density=True)
     
-    plt.xlabel('Temperature (Kelvin)')
+    plt.xlabel('Temperature Sensor Value')
     plt.ylabel('Density')
     plt.title('Temperature Distribution of Selected Devices')
     plt.legend()
@@ -183,7 +183,7 @@ def visualize_temperature_devices():
             plt.plot(hours_of_day, mean_daily_pattern, label=device_name, linewidth=2)
     
     plt.xlabel('Hour of Day')
-    plt.ylabel('Average Temperature (Kelvin)')
+    plt.ylabel('Average Temperature Sensor Value')
     plt.title('Average Daily Temperature Pattern for Selected Devices')
     plt.legend()
     plt.grid(True, alpha=0.3)

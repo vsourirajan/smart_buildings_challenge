@@ -125,10 +125,9 @@ def visualize_temperature_devices():
             
             plt.plot(days, temperature_values, label=device_name, linewidth=1.5)
     
-    plt.xlabel('Days (June 2022)')
-    plt.ylabel('Temperature Sensor Value')
-    plt.title('Temperature of 3 Selected Devices Throughout Training Period (June 2022)')
-    plt.legend()
+    plt.xlabel('Days (June 2022)', fontsize=20)
+    plt.ylabel('Temperature Sensor Value', fontsize=20)
+    plt.legend(fontsize=12)
     plt.grid(True, alpha=0.3)
     
     # Add some statistics
@@ -144,7 +143,7 @@ def visualize_temperature_devices():
             print(f"  Std Deviation: {np.std(temp_values):.2f}")
     
     plt.tight_layout()
-    plt.savefig('temperature_visualization.png', dpi=300, bbox_inches='tight')
+    plt.savefig('graphs/temperature_visualization.png', dpi=300, bbox_inches='tight')
     plt.show()
     
     # Create a second plot showing temperature distribution
@@ -157,12 +156,11 @@ def visualize_temperature_devices():
             
             plt.hist(temp_values, bins=50, alpha=0.7, label=device_name, density=True)
     
-    plt.xlabel('Temperature Sensor Value')
-    plt.ylabel('Density')
-    plt.title('Temperature Distribution of Selected Devices')
-    plt.legend()
+    plt.xlabel('Temperature Sensor Value', fontsize=14)
+    plt.ylabel('Density', fontsize=14)
+    plt.legend(fontsize=12)
     plt.grid(True, alpha=0.3)
-    plt.savefig('temperature_distribution.png', dpi=300, bbox_inches='tight')
+    plt.savefig('graphs/temperature_distribution.png', dpi=300, bbox_inches='tight')
     plt.show()
     
     # Create a third plot showing daily patterns
@@ -182,13 +180,12 @@ def visualize_temperature_devices():
             
             plt.plot(hours_of_day, mean_daily_pattern, label=device_name, linewidth=2)
     
-    plt.xlabel('Hour of Day')
-    plt.ylabel('Average Temperature Sensor Value')
-    plt.title('Average Daily Temperature Pattern for Selected Devices')
-    plt.legend()
+    plt.xlabel('Hour of Day', fontsize=14)
+    plt.ylabel('Average Temperature Sensor Value', fontsize=14)
+    plt.legend(fontsize=12)
     plt.grid(True, alpha=0.3)
     plt.xticks(np.arange(0, 24, 4))
-    plt.savefig('daily_temperature_pattern.png', dpi=300, bbox_inches='tight')
+    plt.savefig('graphs/daily_temperature_pattern.png', dpi=300, bbox_inches='tight')
     plt.show()
 
 if __name__ == "__main__":
